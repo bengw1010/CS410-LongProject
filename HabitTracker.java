@@ -3,10 +3,10 @@ import java.util.Scanner;
 
 public class HabitTracker {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in); // Scanner for reading user input
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Habit Tracker!");
 
-        // Prompt for the user's username and create a new User object
+        // Ask for user's username and create a new User object
         System.out.print("Enter your username: ");
         String username = scanner.nextLine();
         User user = new User(username);
@@ -23,9 +23,9 @@ public class HabitTracker {
             System.out.println("5. Exit");
             System.out.print("Choose an option: ");
             int option = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
 
-            // Handle the user’s choice from the menu
+            // User’s choice from the menu
             switch (option) {
                 case 1:
                     // Add a new habit
@@ -65,7 +65,7 @@ public class HabitTracker {
                 case 5:
                     // Exit the program
                     running = false;
-                    System.out.println("Exiting Habit Tracker. Goodbye!");
+                    System.out.println("Exiting Habit Tracker");
                     break;
                 default:
                     System.out.println("Invalid option. Please try again.");
