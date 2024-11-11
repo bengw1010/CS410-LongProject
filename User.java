@@ -29,10 +29,18 @@ public class User {
     public void addHabit(String habitName) {
         habits.add(new Habit(habitName));
     }
+    // Delete habit that is already in the list of habits
+    public boolean deleteHabit(String habitName) {
+        for (Habit habit : habits) {
+            if (habit.getName().equalsIgnoreCase(habitName)) {
+                habits.remove(habit);
+                return true;
+            }
+        }
+        return false;
+    }
 
-    /**
-     * Displays all habits of the user if no habits print no habit
-     */
+    //Displays all habits of the user if no habits print no habit
     public void showHabits() {
         if (habits.isEmpty()) {
             System.out.println("No habits.");

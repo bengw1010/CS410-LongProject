@@ -13,29 +13,27 @@ public class HabitTracker {
 
         boolean running = true;
 
-        // Main loop for the program's menu
         while (running) {
             System.out.println("\nOptions:");
             System.out.println("1. Add a new habit");
-            System.out.println("2. Increment streak");
-            System.out.println("3. Reset streak");
-            System.out.println("4. Show all habits");
-            System.out.println("5. Exit");
+            System.out.println("2. Increment habit streak");
+            System.out.println("3. Delete a habit");
+            System.out.println("4. Reset habit streak");
+            System.out.println("5. Show all habits");
+            System.out.println("6. Exit");
             System.out.print("Choose an option: ");
             int option = scanner.nextInt();
-            scanner.nextLine();
+            scanner.nextLine(); // Consume newline
 
-            // User’s choice from the menu
+            // Handle the user’s choice from the menu
             switch (option) {
                 case 1:
-                    // Add a new habit
                     System.out.print("Enter habit name: ");
                     String habitName = scanner.nextLine();
                     user.addHabit(habitName);
                     System.out.println("Habit added.");
                     break;
                 case 2:
-                    // Increment the streak for a specific habit
                     System.out.print("Enter habit name to increment streak: ");
                     habitName = scanner.nextLine();
                     for (Habit habit : user.getHabits()) {
@@ -47,7 +45,15 @@ public class HabitTracker {
                     }
                     break;
                 case 3:
-                    // Reset the streak for a specific habit
+                    System.out.print("Enter habit name to delete: ");
+                    habitName = scanner.nextLine();
+                    if (user.deleteHabit(habitName)) {
+                        System.out.println("Habit deleted.");
+                    } else {
+                        System.out.println("Habit not found.");
+                    }
+                    break;
+                case 4:
                     System.out.print("Enter habit name to reset streak: ");
                     habitName = scanner.nextLine();
                     for (Habit habit : user.getHabits()) {
@@ -58,12 +64,10 @@ public class HabitTracker {
                         }
                     }
                     break;
-                case 4:
-                    // Show all habits and their streaks
+                case 5:
                     user.showHabits();
                     break;
-                case 5:
-                    // Exit the program
+                case 6:
                     running = false;
                     System.out.println("Exiting Habit Tracker");
                     break;
