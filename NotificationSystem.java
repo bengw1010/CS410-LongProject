@@ -25,6 +25,5 @@ public class NotificationSystem {
     }
 	public static void main(String[] args) {
 		program.viewNotis();
-		break;
 	}
 }
