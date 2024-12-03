@@ -4,11 +4,11 @@ class Notification {
         this.date = date;
     }
 
-    getMessage() {
+    get message() {
         return this.message;
     }
 
-    getDate() {
+    get date() {
         return this.date;
     }
 }
