@@ -12,7 +12,7 @@ class NotificationSystem {
     // use this when logining to the habit tracker
     viewNotis() {
         this.notis.forEach(noti => {
-            console.log(noti.getMessage() + " - Date:" + noti.getDate());
+            console.log(noti.message() + " - Date:" + noti.date());
         });
     }
 
