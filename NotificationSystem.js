@@ -1,15 +1,15 @@
 class Notification {
     constructor(message, date) {
-        this.message = message;
-        this.date = date;
+        this._message = message;
+        this._date = date;
     }
 
     get message() {
-        return this.message;
+        return this._message;
     }
 
     get date() {
-        return this.date;
+        return this._date;
     }
 }
 
@@ -27,7 +27,7 @@ class NotificationSystem {
     // use this when logining to the habit tracker
     viewNotis() {
         this.notis.forEach(noti => {
-            console.log(noti.message() + " - Date:" + noti.date());
+            console.log(noti.message + " - Date:" + noti.date);
         });
     }
 
