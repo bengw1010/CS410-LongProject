@@ -1,5 +1,3 @@
-habitLevel.js
-
 const Bag = require("./bag");
 
 const levelThresholds = [];
@@ -89,7 +87,7 @@ const resetLevel = (level, exp) => {
 };
 
 // Example flow to demonstrate functionality
-let exp = 5000; // Example total EXP
+const exp = 5000; // Example total EXP
 let level = updateUserLevel(exp);
 
 // Calculate rewards for the current level
