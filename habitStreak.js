@@ -1,6 +1,6 @@
 habitStreak.js
 
-// Function to calculate the XP based on streak
+// Function to calculate the EXP based on streak
 const calculateXPWithStreak = (streak) => {
     const baseEXP = 50;
     
@@ -8,11 +8,11 @@ const calculateXPWithStreak = (streak) => {
     const maxStreak = 5;
     const streakMultiplier = Math.min(streak, maxStreak);  
   
-    // Calculate XP based on streak
+    // Calculate EXP based on streak
     return baseEXP * Math.pow(2, streakMultiplier - 1); 
   };
   
-  // Function to update streak and calculate XP based on whether the habit was done today
+  // Function to update streak and calculate EXP based on whether the habit was done today
   const updateHabitStreak = (habitCompletedToday, currentStreak) => {
     if (habitCompletedToday) {
       // If habit was completed today, increment the streak
@@ -22,10 +22,10 @@ const calculateXPWithStreak = (streak) => {
       currentStreak = 1;
     }
   
-    // Calculate the XP for the current streak
+    // Calculate the EXP for the current streak
     const earnedEXP = calculateXPWithStreak(currentStreak);
   
-    // Return the updated streak and earned XP
+    // Return the updated streak and earned EXP
     return { currentStreak, earnedXP: earnedEXP };
   };
   
